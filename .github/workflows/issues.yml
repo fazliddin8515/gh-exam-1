@@ -1,13 +1,14 @@
 name: Output Context
 on: issues
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Install NodeJS
-      uses: actions/setup-node@v4
-    - name: Get code
-      uses: actions/checkout@v4
-    - name: Install dependencies
-      run: npn ci
-    - name: Output "github" context
-      run: echo "${{ toJSON(github) }}" 
+  context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+      - name: Get code
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npn ci
+      - name: Output "github" context
+        run: echo "${{ toJSON(github) }}" 
