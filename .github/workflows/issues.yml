@@ -9,6 +9,6 @@ jobs:
       - name: Get code
         uses: actions/checkout@v4
       - name: Install dependencies
-        run: npn ci
+        run: npm ci
       - name: Output "github" context
         run: echo "${{ toJSON(github) }}" 
